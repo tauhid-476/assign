@@ -2,7 +2,6 @@
 import { useState, useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import Image from 'next/image';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -80,7 +79,6 @@ export default function Testimonials() {
     
     layers.forEach((layer, index) => {
       const direction = index % 2 === 0 ? 1 : -1;
-      const speed = 0.2 + (index * 0.1);
       
       gsap.fromTo(layer,
         { x: direction * -50, opacity: 0.5 },
@@ -213,7 +211,7 @@ export default function Testimonials() {
               style={{ transformStyle: 'preserve-3d' }}
             >
               {/* Quote mark decoration */}
-              <div className="absolute top-4 left-8 text-8xl text-green-400/20 font-serif leading-none">"</div>
+              <div className="absolute top-4 left-8 text-8xl text-green-400/20 font-serif leading-none">&ldquo;</div>
               
               <div className="relative z-10">
                 <p className="text-xl md:text-2xl text-center font-medium italic text-gray-700 mb-8">
